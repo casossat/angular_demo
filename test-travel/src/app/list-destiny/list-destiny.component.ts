@@ -20,4 +20,12 @@ export class ListDestinyComponent implements OnInit {
     this.destinies.push(new TravelDestiny(name, url))
     return false
   }
+  
+  select_destiny(d: TravelDestiny) {
+    this.destinies.forEach(function(elem) {
+      elem.set_selected(false)
+    })
+
+    d.set_selected(true)
+  }
 }

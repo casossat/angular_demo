@@ -1,26 +1,26 @@
 <!-- <travel-destiny *ngFor="let item of destinies" [nombre]="item"></travel-destiny> -->
 
-<div class="container	content">
+<div class="container content">
   <div class="row">
-    <div class="col-md-6	offset-md-3">
+    <div class="col-md-6 offset-md-3">
       <span class="anchor" id="formLogin"></span>
-      <!-- form	card	login	with	validation	feedback	-->
-      <div class="card	card-outline-secondary">
+      <!-- form card login with validation feedback -->
+      <div class="card card-outline-secondary">
         <div class="card-header">
-          <h3 class="mb-0">Whishlist</h3>
+          <h3 class="mb-0">Generar Pedido</h3>
         </div>
         <div class="card-body">
           <form>
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..." #name>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese un nombre" #name>
             </div>
             <div class="form-group">
-              <label for="Imagen	Url">Imagen Url</label>
-              <input type="text" class="form-control" id="imagenUrl" placeholder="Ingresar url..." #url>
+              <label for="Imagen Url">Imagen</label>
+              <input type="text" class="form-control" id="imagenUrl" placeholder="Ingrese una URL" #url>
             </div>
-            <button type="submit" class="btn	btn-primary" 
-            (click)="save(name.value, url.value)">Guardar!</button>
+            <button type="submit" class="btn btn-primary" 
+            (click)="save(name.value, url.value)">Generar</button>
           </form>
         </div>
       </div>
@@ -28,6 +28,7 @@
   </div>
   <hr class="mb-5">
   <div class="row">
-    <travel-destiny *ngFor="let d of destinies" [destiny]="d"></travel-destiny>
+    <travel-destiny *ngFor="let d of destinies" 
+    [destiny]="d" (clicked)="select_destiny($event)"></travel-destiny>
   </div>
 </div>

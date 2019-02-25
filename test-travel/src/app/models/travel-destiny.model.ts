@@ -1,9 +1,14 @@
 export class TravelDestiny {
-  name: string
-  imgURL: string
+  private selected: boolean
+  constructor(public name: string, public imgURL: string) { 
+    this.selected = false
+  }
 
-  constructor(n: string, i: string) {
-    this.name = n
-    this.imgURL = i
+  is_selected(): boolean {
+    return this.selected
+  }
+
+  set_selected(s:boolean) {
+    this.selected = s
   }
 }

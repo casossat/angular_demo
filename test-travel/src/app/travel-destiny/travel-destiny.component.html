@@ -6,10 +6,14 @@
     </span>
   </div>
   <div class="card-desc">
-    <h3>{{ destiny.name }}</h3>
+    <h3>
+      <i class="fa-lg fa-star text-warning" 
+      [ngClass]="{ 'far': !destiny.is_selected(), 'fas' : destiny.is_selected()}"></i>
+      {{ destiny.name }}
+    </h3>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor
       quo, perspiciatis
       voluptas totam</p>
-    <a href="#" class="btn-card">Read</a>
+    <a href="#" class="btn-card" (click)="select()">{{ Click! }}</a>
   </div>
 </div>
